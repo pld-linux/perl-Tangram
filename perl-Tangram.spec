@@ -1,0 +1,52 @@
+%include	/usr/lib/rpm/macros.perl
+%define	pnam	Tangram
+Summary:	Object-relational mapper module
+Name:		perl-%{pnam}
+Version:	2.04
+Release:	0.1
+License:	GPL/Artistic
+Group:		Development/Languages/Perl
+Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pnam}/%{pnam}-%{version}.tar.gz
+BuildRequires:	perl >= 5.6
+BuildRequires:	rpm-perlprov >= 3.0.3-16
+BuildArch:	noarch
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define  _noautoprov 'perl(Address)' 'perl(LegalPerson)' 'perl(NaturalPerson)' 'perl(Person)'
+%define  _noautoreq  'perl(Tangram::Core)' 'perl(Tangram::Relational::Engine)'
+
+%description
+Tangram is an object-relational mapper. It makes objects persist in
+relational databases, and provides powerful facilities for retrieving
+and filtering them. Tangram fully supports object-oriented
+programming, including polymorphism, multiple inheritance and
+collections. It does so in an orthogonal fashion, that is, it doesn't
+require your classes to implement support functions nor inherit from a
+utility class.
+
+
+%prep
+%setup -q -n %{pnam}-%{version}
+
+%build
+perl Makefile.PL << EOF
+n
+EOF
+%{__make}
+#%{__make} test # needs an configured db connection
+
+%install
+rm -rf $RPM_BUILD_ROOT
+
+%{__make} install DESTDIR=$RPM_BUILD_ROOT
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%files
+%defattr(644,root,root,755)
+%doc Change*
+%{perl_sitelib}/%{pnam}.pm
+%dir %{perl_sitelib}/%{pnam}
+%{perl_sitelib}/%{pnam}/*.pm
+%{_mandir}/man3/*
