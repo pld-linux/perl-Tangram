@@ -43,7 +43,7 @@ z klasy narzêdziowej.
 n
 EOF
 %{__make}
-#%{__make} test # needs an configured db connection
+#%%{__make} test # needs an configured db connection
 
 %install
 rm -rf $RPM_BUILD_ROOT
