@@ -38,7 +38,7 @@ z klasy narzêdziowej.
 %setup -q -n %{pnam}-%{version}
 
 %build
-perl Makefile.PL << EOF
+%{__perl} Makefile.PL << EOF
 n
 EOF
 %{__make}
