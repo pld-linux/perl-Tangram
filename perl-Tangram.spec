@@ -3,12 +3,12 @@
 Summary:	Object-relational mapper module
 Summary(pl):	Modu³ odwzorowywania obiektowo-relacyjnego
 Name:		perl-%{pnam}
-Version:	2.04
-Release:	1.1
+Version:	2.06
+Release:	1
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pnam}/%{pnam}-%{version}.tar.gz
-# Source0-md5:	bb48b40e34d56169f0b1dd35a890cbbd
+# Source0-md5:	63a41a15d9670dc5e3a764c103015cf2
 BuildRequires:	perl-devel >= 5.6
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	perl-Set-Object
