@@ -4,7 +4,7 @@
 			# needs a configured db connection
 #
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	Tangram
+%define		pdir	Tangram
 Summary:	Tangram - object-relational mapper module
 Summary(pl):	Tangram - modu³ odwzorowywania obiektowo-relacyjnego
 Name:		perl-Tangram
