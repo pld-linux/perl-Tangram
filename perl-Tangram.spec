@@ -4,16 +4,16 @@
 			# needs a configured db connection
 #
 %include	/usr/lib/rpm/macros.perl
-%define	pnam	Tangram
+%define	pdir	Tangram
 Summary:	Tangram - object-relational mapper module
 Summary(pl):	Tangram - modu³ odwzorowywania obiektowo-relacyjnego
-Name:		perl-%{pnam}
+Name:		perl-Tangram
 Version:	2.07
 Release:	1
 License:	GPL or commercial
 Vendor:		Sound Object Logic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/%{pnam}/%{pnam}-%{version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{version}.tar.gz
 # Source0-md5:	6af5ab6c84ff666de8d2c070609ed9ee
 URL:		http://www.soundobjectlogic.com/tangram/
 BuildRequires:	perl-devel >= 1:5.8.0
@@ -44,7 +44,7 @@ nie wymaga, aby klasy implementowa³y funkcje obs³ugi ani dziedziczy³y
 z klasy narzêdziowej.
 
 %prep
-%setup -q -n %{pnam}-%{version}
+%setup -q -n %{pdir}-%{version}
 
 %build
 echo n | %{__perl} Makefile.PL \
@@ -65,9 +65,9 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Change*
-%{perl_vendorlib}/%{pnam}.pm
-%dir %{perl_vendorlib}/%{pnam}
-%{perl_vendorlib}/%{pnam}/*.pm
-%dir %{perl_vendorlib}/%{pnam}/Relational
-%{perl_vendorlib}/%{pnam}/Relational/*.pm
+%{perl_vendorlib}/*.pm
+%dir %{perl_vendorlib}/%{pdir}
+%{perl_vendorlib}/%{pdir}/*.pm
+%dir %{perl_vendorlib}/%{pdir}/Relational
+%{perl_vendorlib}/%{pdir}/Relational/*.pm
 %{_mandir}/man3/*
