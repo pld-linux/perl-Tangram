@@ -4,12 +4,12 @@ Summary:	Object-relational mapper module
 Summary(pl):	Modu³ odwzorowywania obiektowo-relacyjnego
 Name:		perl-%{pnam}
 Version:	2.04
-Release:	0.1
+Release:	1.1
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pnam}/%{pnam}-%{version}.tar.gz
 BuildRequires:	perl >= 5.6
-BuildRequires:	rpm-perlprov >= 3.0.3-16
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	perl-Set-Object
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -39,9 +39,8 @@ z klasy narzêdziowej.
 %setup -q -n %{pnam}-%{version}
 
 %build
-%{__perl} Makefile.PL << EOF
-n
-EOF
+echo n | %{__perl} Makefile.PL \
+	INSTALLDIRS=vendor
 %{__make}
 #%%{__make} test # needs an configured db connection
 
@@ -56,9 +55,9 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Change*
-%{perl_sitelib}/%{pnam}.pm
-%dir %{perl_sitelib}/%{pnam}
-%{perl_sitelib}/%{pnam}/*.pm
-%dir %{perl_sitelib}/%{pnam}/Relational
-%{perl_sitelib}/%{pnam}/Relational/*.pm
+%{perl_vendorlib}/%{pnam}.pm
+%dir %{perl_vendorlib}/%{pnam}
+%{perl_vendorlib}/%{pnam}/*.pm
+%dir %{perl_vendorlib}/%{pnam}/Relational
+%{perl_vendorlib}/%{pnam}/Relational/*.pm
 %{_mandir}/man3/*
