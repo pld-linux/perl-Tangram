@@ -1,3 +1,8 @@
+#
+# Conditional build:
+%bcond_with	tests	# perform "make test"
+			# needs a configured db connection
+#
 %include	/usr/lib/rpm/macros.perl
 %define	pnam	Tangram
 Summary:	Tangram - object-relational mapper module
@@ -45,12 +50,14 @@ z klasy narzêdziowej.
 echo n | %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
 %{__make}
-#%%{__make} test # needs an configured db connection
+
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
