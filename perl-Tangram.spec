@@ -49,4 +49,6 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_sitelib}/%{pnam}.pm
 %dir %{perl_sitelib}/%{pnam}
 %{perl_sitelib}/%{pnam}/*.pm
+%dir %{perl_sitelib}/%{pnam}/Relational
+%{perl_sitelib}/%{pnam}/Relational/*.pm
 %{_mandir}/man3/*
