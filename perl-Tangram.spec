@@ -1,14 +1,16 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pnam	Tangram
-Summary:	Object-relational mapper module
-Summary(pl):	Modu³ odwzorowywania obiektowo-relacyjnego
+Summary:	Tangram - object-relational mapper module
+Summary(pl):	Tangram - modu³ odwzorowywania obiektowo-relacyjnego
 Name:		perl-%{pnam}
 Version:	2.07
 Release:	1
-License:	GPL/Artistic
+License:	GPL or commercial
+Vendor:		Sound Object Logic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pnam}/%{pnam}-%{version}.tar.gz
 # Source0-md5:	6af5ab6c84ff666de8d2c070609ed9ee
+URL:		http://www.soundobjectlogic.com/tangram/
 BuildRequires:	perl-devel >= 5.6
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	perl-Set-Object
