@@ -1,4 +1,6 @@
 #
+# TODO: Split ?
+#
 # Conditional build:
 %bcond_with	tests	# perform "make test"
 			# needs a configured db connection
@@ -8,13 +10,12 @@
 Summary:	Tangram - object-relational mapper module
 Summary(pl):	Tangram - modu³ odwzorowywania obiektowo-relacyjnego
 Name:		perl-Tangram
-Version:	2.07
-Release:	1
+Version:	2.10
+Release:	0.1
 License:	GPL or commercial
-Vendor:		Sound Object Logic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{version}.tar.gz
-# Source0-md5:	6af5ab6c84ff666de8d2c070609ed9ee
+# Source0-md5:	a55e320d8b96f7023dda927c36361e5e
 URL:		http://www.soundobjectlogic.com/tangram/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -66,8 +67,56 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc Change*
 %{perl_vendorlib}/*.pm
-%dir %{perl_vendorlib}/%{pdir}
-%{perl_vendorlib}/%{pdir}/*.pm
-%dir %{perl_vendorlib}/%{pdir}/Relational
-%{perl_vendorlib}/%{pdir}/Relational/*.pm
+%dir %{perl_vendorlib}/Tangram
+%{perl_vendorlib}/Tangram/*.pm
+%dir %{perl_vendorlib}/Tangram/Compat
+%{perl_vendorlib}/Tangram/Compat/*.pm
+%dir %{perl_vendorlib}/Tangram/Cursor
+%{perl_vendorlib}/Tangram/Cursor/*.pm
+%dir %{perl_vendorlib}/Tangram/Driver
+%{perl_vendorlib}/Tangram/Driver/*.pm
+%dir %{perl_vendorlib}/Tangram/Driver/Oracle
+%{perl_vendorlib}/Tangram/Driver/Oracle/*.pm
+%dir %{perl_vendorlib}/Tangram/Driver/Pg
+%{perl_vendorlib}/Tangram/Driver/Pg/*.pm
+%dir %{perl_vendorlib}/Tangram/Driver/SQLite
+%{perl_vendorlib}/Tangram/Driver/SQLite/*.pm
+%dir %{perl_vendorlib}/Tangram/Driver/Sybase
+%{perl_vendorlib}/Tangram/Driver/Sybase/*.pm
+%dir %{perl_vendorlib}/Tangram/Driver/Sybase/Expr
+%{perl_vendorlib}/Tangram/Driver/Sybase/Expr/*.pm
+%dir %{perl_vendorlib}/Tangram/Driver/mysql
+%{perl_vendorlib}/Tangram/Driver/mysql/*.pm
+%dir %{perl_vendorlib}/Tangram/Driver/mysql/Expr
+%{perl_vendorlib}/Tangram/Driver/mysql/Expr/*.pm
+%dir %{perl_vendorlib}/Tangram/Expr
+%{perl_vendorlib}/Tangram/Expr/*.pm
+%dir %{perl_vendorlib}/Tangram/Expr/Coll
+%{perl_vendorlib}/Tangram/Expr/Coll/*.pm
+%dir %{perl_vendorlib}/Tangram/Lazy
+%{perl_vendorlib}/Tangram/Lazy/*.pm
+%dir %{perl_vendorlib}/Tangram/Relational
+%{perl_vendorlib}/Tangram/Relational/*.pm
+%dir %{perl_vendorlib}/Tangram/Relational/Engine
+%{perl_vendorlib}/Tangram/Relational/Engine/*.pm
+%dir %{perl_vendorlib}/Tangram/Schema
+%{perl_vendorlib}/Tangram/Schema/*.pm
+%dir %{perl_vendorlib}/Tangram/Storage
+%{perl_vendorlib}/Tangram/Storage/*.pm
+%dir %{perl_vendorlib}/Tangram/Type
+%{perl_vendorlib}/Tangram/Type/*.pm
+%dir %{perl_vendorlib}/Tangram/Type/Abstract
+%{perl_vendorlib}/Tangram/Type/Abstract/*.pm
+%dir %{perl_vendorlib}/Tangram/Type/Array
+%{perl_vendorlib}/Tangram/Type/Array/*.pm
+%dir %{perl_vendorlib}/Tangram/Type/Date
+%{perl_vendorlib}/Tangram/Type/Date/*.pm
+%dir %{perl_vendorlib}/Tangram/Type/Dump
+%{perl_vendorlib}/Tangram/Type/Dump/*.pm
+%dir %{perl_vendorlib}/Tangram/Type/Hash
+%{perl_vendorlib}/Tangram/Type/Hash/*.pm
+%dir %{perl_vendorlib}/Tangram/Type/Ref
+%{perl_vendorlib}/Tangram/Type/Ref/*.pm
+%dir %{perl_vendorlib}/Tangram/Type/Set
+%{perl_vendorlib}/Tangram/Type/Set/*.pm
 %{_mandir}/man3/*
