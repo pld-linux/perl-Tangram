@@ -8,7 +8,7 @@
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Tangram
 Summary:	Tangram - object-relational mapper module
-Summary(pl):	Tangram - modu³ odwzorowywania obiektowo-relacyjnego
+Summary(pl.UTF-8):   Tangram - moduÅ‚ odwzorowywania obiektowo-relacyjnego
 Name:		perl-Tangram
 Version:	2.10
 Release:	0.1
@@ -35,14 +35,14 @@ collections. It does so in an orthogonal fashion, that is, it doesn't
 require your classes to implement support functions nor inherit from a
 utility class.
 
-%description -l pl
-Tangram to klasa odwzorowañ obiektowo-relacyjnych. Powoduje
-przechowywanie obiektów w relacyjnych bazach danych i udostêpnia
-udogodnienia do odtwarzania i filtrowania ich. Tangram w pe³ni wspiera
-programowanie zorientowane obiektowo, w³±cznie z polimorfizmem,
-wielodziedziczeniem i kolekcjami. Czyni to na wzór ortogonalny, czyli
-nie wymaga, aby klasy implementowa³y funkcje obs³ugi ani dziedziczy³y
-z klasy narzêdziowej.
+%description -l pl.UTF-8
+Tangram to klasa odwzorowaÅ„ obiektowo-relacyjnych. Powoduje
+przechowywanie obiektÃ³w w relacyjnych bazach danych i udostÄ™pnia
+udogodnienia do odtwarzania i filtrowania ich. Tangram w peÅ‚ni wspiera
+programowanie zorientowane obiektowo, wÅ‚Ä…cznie z polimorfizmem,
+wielodziedziczeniem i kolekcjami. Czyni to na wzÃ³r ortogonalny, czyli
+nie wymaga, aby klasy implementowaÅ‚y funkcje obsÅ‚ugi ani dziedziczyÅ‚y
+z klasy narzÄ™dziowej.
 
 %prep
 %setup -q -n %{pdir}-%{version}
