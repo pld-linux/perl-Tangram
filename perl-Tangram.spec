@@ -8,7 +8,7 @@
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Tangram
 Summary:	Tangram - object-relational mapper module
-Summary(pl.UTF-8):   Tangram - moduł odwzorowywania obiektowo-relacyjnego
+Summary(pl.UTF-8):	Tangram - moduł odwzorowywania obiektowo-relacyjnego
 Name:		perl-Tangram
 Version:	2.10
 Release:	0.1
