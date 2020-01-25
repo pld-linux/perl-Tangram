@@ -5,7 +5,6 @@
 %bcond_with	tests	# perform "make test"
 			# needs a configured db connection
 #
-%include	/usr/lib/rpm/macros.perl
 %define		pdir	Tangram
 Summary:	Tangram - object-relational mapper module
 Summary(pl.UTF-8):	Tangram - moduł odwzorowywania obiektowo-relacyjnego
